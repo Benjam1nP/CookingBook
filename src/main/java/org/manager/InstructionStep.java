@@ -1,0 +1,40 @@
+package org.manager;
+
+import jakarta.persistence.*;
+
+@Entity
+public class InstructionStep {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private int stepNumber;
+
+    @Column(length = 2000)
+    private String description;
+
+    private int durationMinutes;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "recipe_id")
+    private Recipe recipe;
+
+    protected InstructionStep() { }
+
+    public InstructionStep(int stepNumber, String description, int durationMinutes) {
+        if (durationMinutes < 0) throw new IllegalArgumentException("durationMinutes must be >= 0");
+        this.stepNumber = stepNumber;
+        this.description = description;
+        this.durationMinutes = durationMinutes;
+    }
+
+
+    public Long getId() { return id; }
+    public int getStepNumber() { return stepNumber; }
+    public String getDescription() { return description; }
+    public int getDurationMinutes() { return durationMinutes; }
+
+    public Recipe getRecipe() { return recipe; }
+    void setRecipe(Recipe recipe) { this.recipe = recipe; }
+}
