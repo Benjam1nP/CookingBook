@@ -8,7 +8,6 @@
 
 # Vaadin generated files
 /frontend/generated/
-/node_modules/
 /target/
 npm-debug.log
 yarn-error.log

@@ -12,7 +12,7 @@ public class DataInitializer {
         return args -> {
             // Recipe 1: Spaghetti Carbonara (Vegetarian version without meat)
             Recipe carbonara = new Recipe(
-                    "Spaghetti Carbonara (Veggie)",
+                    "Spaghetti Carbonara",
                     "A delicious Italian pasta dish with eggs, cheese, and vegetables.",
                     Difficulty.MEDIUM,
                     4

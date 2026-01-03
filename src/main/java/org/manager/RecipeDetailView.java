@@ -125,7 +125,7 @@ public class RecipeDetailView extends VerticalLayout implements HasUrlParameter<
 
         // Button 3: Show Cooking Time
         Button showCookingTimeBtn = new Button("Total Cooking Time");
-        checkVegetarianBtn.addClickListener(e -> showTotalCookingTime());
+        showCookingTimeBtn.addClickListener(e -> showTotalCookingTime());
 
         return new HorizontalLayout(calculatePortionsBtn, checkVegetarianBtn, showCookingTimeBtn);
     }
